@@ -4,15 +4,13 @@ import CardContainer from "./components/CardContainer";
 import TheForm from "./components/TheForm";
 
 import Title from "./components/Title";
-import Card from "./components/Card";
+
 
 function App() {
   const [name, setName] = useState("");
   const [dept, setDept] = useState("");
   const [rating, setRating] = useState("");
-  const [users, setusers] = useState([
-    {  },
-  ]);
+  const [users, setusers] = useState([]);
 
   return (
     <>
@@ -27,8 +25,8 @@ function App() {
         users={users}
         setusers={setusers}
       />
-      <CardContainer users={users} setusers={setusers} />
-      
+      {users.length>0 && <CardContainer users={users} setusers={setusers} />}
+      {console.log(users)}
       {/* <Card name={name} dept={dept} rating={rating} /> */}
     </>
     
